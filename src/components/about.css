@@ -1,0 +1,17 @@
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(45deg, #80E0D0, #00FFAA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Glowing Border */
+  .glowing-border {
+    border: 2px solid #80E0D0;
+    box-shadow: 0 0 10px #80E0D0, 0 0 20px #80E0D0, 0 0 40px #80E0D0;
+  }
+  
+  /* Gradient Background */
+  .gradient-background {
+    background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
+  }

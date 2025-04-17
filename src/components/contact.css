@@ -1,0 +1,48 @@
+/* Floating Labels */
+.input-group {
+    position: relative;
+    width: 100%;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: #101820;
+    color: #80E0D0;
+    border: 2px solid #80E0D0;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .form-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #80E0D0;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  
+  /* Move label up when input is focused or has text */
+  .form-input:focus ~ .form-label,
+  .form-input:not(:placeholder-shown) ~ .form-label {
+    top: 10px;
+    font-size: 0.8rem;
+    color: #00f7ff; /* Gold color when active */
+  }
+  
+  /* Glow effect */
+  .form-input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.671);
+  }
+  
+  /* Button Hover */
+  button {
+    transition: all 0.3s ease-in-out;
+  }
+  
