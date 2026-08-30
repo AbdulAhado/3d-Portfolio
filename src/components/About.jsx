@@ -1,89 +1,101 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./about.css"; // Reuse your existing CSS file
-import frontend from '../assets/frontend.png'
+import "./style.css";
+import mern from "../assets/mern.jpg";
+
 const About = () => {
-    return (
-        <section id="about"><motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="text-4xl font-bold text-center mb-5 neon-text ">About Me</motion.h2>
-            <section className="min-h-screen flex items-center justify-center bg-black text-[#80E0D0] p-8">
+  return (
+    <section id="about" className="py-20 bg-[var(--background)] scroll-mt-24">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text"
+      >
+        About Me
+      </motion.h2>
 
-                <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-                    {/* Left Side: Image */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        viewport={{ once: true }}
-                        className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0"
-                    >
-                        <motion.img
-                            src={frontend}// Replace with your image
-                            alt="Abdul Ahad Saeed"
-                            className="w-64 h-64 md:w-80 md:h-80 rounded-full glowing-border gradient-background"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                        />
-                    </motion.div>
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    {/* Right Side: About Text */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1 }}
-                        viewport={{ once: true }}
-                        className="text-left w-full md:w-1/2"
-                    >
-                       
-
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 0.7 }}
-                            viewport={{ once: true }}
-                            className="text-lg mb-4"
-                        >
-                            👋 Hi there! I’m <span className="font-bold">Abdul Ahad Saeed</span>, a passionate Front-End Developer and BS-IT student at BZU Multan, where I’m diving deep into the world of technology and innovation. With a knack for crafting seamless digital experiences, I specialize in turning ideas into dynamic, user-centric applications using modern tools like <span className="font-bold">React</span>, <span className="font-bold">JavaScript</span>, and <span className="font-bold">Tailwind CSS</span>.
-                        </motion.p>
-
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 0.9 }}
-                            viewport={{ once: true }}
-                            className="text-lg mb-4"
-                        >
-                            My journey doesn’t stop at the front-end—I’m also exploring the full-stack realm with <span className="font-bold">Node.js</span>, <span className="font-bold">Express</span>, and <span className="font-bold">MongoDB</span>, building everything from real-time chat apps to AI-powered tools. Whether it’s a Spotify-inspired music player or a contact manager with Firebase, I thrive on solving problems through clean code and creative solutions.
-                        </motion.p>
-
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 1.1 }}
-                            viewport={{ once: true }}
-                            className="text-lg mb-4"
-                        >
-                            Beyond the screen, you’ll find me strategizing over a chessboard, swinging a cricket bat, or freelancing as a Shopify and Amazon Virtual Assistant. I believe in continuous learning, collaboration, and pushing boundaries—both in tech and life.
-                        </motion.p>
-
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 1.3 }}
-                            viewport={{ once: true }}
-                            className="text-lg font-bold gradient-text"
-                        >
-                            Let’s build something amazing together! 💡
-                        </motion.p>
-                    </motion.div>
+            {/* LEFT: IMAGE SECTION — single animation system */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="flex justify-center"
+            >
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full">
+                {/* Glow */}
+                <div className="absolute inset-0 rounded-full
+                  bg-gradient-to-r from-[var(--primary)] via-[var(--secondary)] to-[var(--highlight)]
+                  blur-2xl opacity-30">
                 </div>
-            </section>
-        </section>
-    );
+
+                {/* Image */}
+                <motion.img
+                  src={mern}
+                  alt="Abdul Ahad Saeed - MERN Stack Developer"
+                  className="relative w-full h-full rounded-full object-cover
+                             border-4 border-[var(--primary)]
+                             shadow-2xl bg-[var(--background)] z-10"
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+                  loading="lazy"
+                />
+
+                {/* Ring */}
+                <div className="absolute inset-0 rounded-full
+                  border-2 border-[var(--secondary)] opacity-30">
+                </div>
+              </div>
+            </motion.div>
+
+            {/* RIGHT: TEXT SECTION — single animation system */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.55, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="text-[var(--text)] space-y-6"
+            >
+              <p className="text-lg md:text-xl leading-relaxed">
+                Hi, I'm <strong className="text-[var(--secondary)]">Abdul Ahad Saeed</strong>,
+                a <strong>Full Stack Developer</strong> currently working at
+                <strong className="text-[var(--primary)]"> Terapage.ai</strong> and a
+                BS-IT student at BZU Multan.
+              </p>
+
+              <p className="text-lg md:text-xl leading-relaxed">
+                I specialize in building scalable, AI-powered web applications using
+                modern technologies like React, Node.js, Express, MongoDB, and OpenAI APIs.
+              </p>
+
+              <p className="text-lg md:text-xl leading-relaxed">
+                At Terapage.ai, I've worked on AI-driven synthetic data systems, automated
+                voice interview platforms, and research insight tools—focusing on clean
+                architecture and seamless user experience.
+              </p>
+
+              <p className="text-lg md:text-xl leading-relaxed">
+                I'm passionate about clean code, problem-solving, and building products
+                that make a real-world impact. Outside of coding, I enjoy chess, cricket,
+                and exploring new technologies.
+              </p>
+
+              <p className="text-xl md:text-2xl font-bold gradient-text pt-4">
+                Let's create something awesome together 🚀
+              </p>
+            </motion.div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default About;

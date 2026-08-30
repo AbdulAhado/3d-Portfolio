@@ -1,1 +1,21 @@
-@import "tailwindcss";
+/* index.css — minimal reset, font, root vars */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  background: #020208;
+  color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }

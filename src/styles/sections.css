@@ -1,0 +1,322 @@
+/* ============================================================
+   SECTIONS.CSS — Consolidated component styles
+   Extracted from inline <style> tags to prevent repeated DOM injection.
+   ============================================================ */
+
+/* ── Hero Section ─────────────────────────────────────────── */
+.silver-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 55%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-btn-primary {
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0b0f17;
+  background: linear-gradient(135deg, #ffffff, #e2e8f0, #cbd5e1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+.hero-btn-primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(255, 255, 255, 0.25);
+}
+
+.hero-btn-secondary {
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.card-social-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.card-social-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.card-social-btn.upwork:hover {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #10b981;
+}
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Hero character float — GPU composited via CSS instead of JS */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) translate3d(0,0,0); }
+  50% { transform: translateY(-8px) translate3d(0,0,0); }
+}
+.hero-character-float {
+  animation: hero-float 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Hero responsive switch */
+.hero-desktop { display: flex !important; }
+.hero-mobile  { display: none !important; }
+
+@media (max-width: 960px) {
+  .hero-desktop { display: none !important; }
+  .hero-mobile  { display: flex !important; }
+}
+
+/* ── About Section ────────────────────────────────────────── */
+.about-learn-more-btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .about-wrapper-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .about-character-container {
+    margin-right: 0 !important;
+    margin-bottom: -20px !important;
+  }
+  .about-character-container img {
+    height: 320px !important;
+  }
+  .about-card-container {
+    padding: 40px 24px 30px 24px !important;
+  }
+}
+
+/* ── Skills Section ───────────────────────────────────────── */
+.silver-text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 55%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.tech-grid-tile:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(56, 189, 248, 0.6) !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35),
+              0 0 10px rgba(56, 189, 248, 0.5),
+              inset 0 0 12px rgba(56, 189, 248, 0.15) !important;
+}
+.tech-grid-tile:hover .tile-icon {
+  color: #38bdf8 !important;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.7));
+}
+
+@media (max-width: 960px) {
+  #skills {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 1rem !important;
+    padding-bottom: 95px !important;
+    overflow-y: auto !important;
+    justify-content: flex-start !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .skills-categories-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* ── Projects Section ─────────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 100px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+}
+
+@media (max-width: 900px) {
+  .projects-split-container {
+    flex-direction: column !important;
+  }
+  .projects-left-list {
+    width: 100% !important;
+    height: 120px !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+  .projects-right-showcase {
+    width: 100% !important;
+  }
+}
+
+/* ── Experience Section ───────────────────────────────────── */
+@media (max-width: 900px) {
+  .experience-split-container {
+    flex-direction: column !important;
+  }
+  .experience-left-list {
+    width: 100% !important;
+    height: 90px !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+  .experience-right-panel {
+    width: 100% !important;
+  }
+  .experience-resp-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── KeyTasks Section ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .tasks-split-container {
+    flex-direction: column !important;
+  }
+  .tasks-left-list {
+    width: 100% !important;
+    height: 90px !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+  .tasks-right-panel {
+    width: 100% !important;
+  }
+  .tasks-resp-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Contact Section ──────────────────────────────────────── */
+.connect-hub-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.connect-hub-card.upwork-card:hover {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65),
+              0 0 25px rgba(16, 185, 129, 0.15) !important;
+}
+.connect-hub-card.linkedin-card:hover {
+  border-color: rgba(14, 165, 233, 0.4) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65),
+              0 0 25px rgba(14, 165, 233, 0.15) !important;
+}
+.connect-hub-card.email-card:hover {
+  border-color: rgba(168, 85, 247, 0.4) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65),
+              0 0 25px rgba(168, 85, 247, 0.15) !important;
+}
+.connect-hub-card.code-card:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65),
+              0 0 25px rgba(255, 255, 255, 0.12) !important;
+}
+
+.upwork-action-btn:hover {
+  background: #10b981 !important;
+  transform: translateY(-1.5px);
+}
+.linkedin-action-btn:hover {
+  background: #0284c7 !important;
+  transform: translateY(-1.5px);
+}
+.email-action-btn:hover {
+  background: #ffffff !important;
+  transform: translateY(-1.5px);
+}
+.github-action-btn:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1.5px);
+}
+.whatsapp-action-btn:hover {
+  background: #22c55e !important;
+  transform: translateY(-1.5px);
+}
+
+@media (max-width: 900px) {
+  #contact {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 100vh !important;
+    padding-top: 2rem !important;
+    padding-bottom: 90px !important;
+    overflow-y: auto !important;
+  }
+  .connect-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+/* ── Navbar ───────────────────────────────────────────────── */
+.nav-dock-desktop { display: inline-flex !important; }
+.nav-dock-mobile  { display: none !important; }
+
+@media (max-width: 800px) {
+  .nav-dock-desktop { display: none !important; }
+  .nav-dock-mobile  { display: inline-flex !important; }
+}
+
+/* ── Reduced Motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-character-float {
+    animation: none !important;
+  }
+}
